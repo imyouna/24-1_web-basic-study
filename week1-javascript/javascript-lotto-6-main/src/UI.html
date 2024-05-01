@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>로또 추첨</title>
+  <style>
+  .number-form{
+    display: none;
+  }
+  .result{
+    display: none;
+  }
+  input[type=text]{
+    width: 50px;
+    height: 50px;
+  }
+  #inputPrice{
+    width: 200px;
+    height: 20px;
+  }
+  .word{
+    padding: 20px;
+  }
+  </style>
+</head>
+<body>
+  <div class="money-form">
+    <div class="word">구입할 금액을 입력해주세요.</div>
+    <div class="inputPrice">
+      <input type="text" Id="inputPrice" placeholder="금액"/>
+      <button Id="button">구입</button>
+    </div>
+  </div>
+  
+  <div class="makeLottos">
+    <div id="num"></div>
+    <div id="lottos"></div>
+  </div>
+
+  <div class="number-form">
+    <div class="word">지난 주 당첨번호 6개와 보너스 번호 1개를 입력해주세요.</div>
+    <div id="inputWinNumber">
+      <div class="word">당첨 번호</div>
+      <input type="text" class="winNumber" maxlength="2">
+      <input type="text" class="winNumber" maxlength="2">
+      <input type="text" class="winNumber" maxlength="2">
+      <input type="text" class="winNumber" maxlength="2">
+      <input type="text" class="winNumber" maxlength="2">
+      <input type="text" class="winNumber" maxlength="2">
+    </div>
+    <div id="inputBonus">
+      <div class="word">보너스 번호</div>
+      <input type="text" id="bonusNumber" maxlength="2">
+    </div>
+    <button Id="resultButton">결과 확인하기</button>
+  </div>
+
+
+  <div class="result">
+    <div class="word">당첨 통계</div>
+    <table class="result-table">
+      <tr>
+        <th>일치 갯수</th>
+        <th>당첨금</th>
+        <th>당첨 갯수</th>
+      </tr>
+      <tr>
+        <th>3개</th>
+        <th>5,000</th>
+        <th><div id="5등"></div></th>
+      </tr>
+      <tr>
+        <th>4개</th>
+        <th>50,000</th>
+        <th><div id="4등"></div></th>
+      </tr>
+      <tr>
+        <th>5개</th>
+        <th>1,500,000</th>
+        <th><div id="3등"></div></th>
+      </tr>
+      <tr>
+        <th>5개+보너스볼</th>
+        <th>30,000,000</th>
+        <th><div id="2등"></div></th>
+      </tr>
+      <tr>
+        <th>6개</th>
+        <th>2,000,000,000</th>
+        <th><div id="1등"></div></th>
+      </tr>
+    </table>
+    
+    <div class="word">당신의 총 수익률은 <div id="profit"></div>%입니다.</div>
+    <button id="restart">다시 시작하기</button>
+  </div>
+
+  <script type="module" src="./View.js"></script>
+  <script type="module" src="App.js"></script>
+  <script type="module"src="./Model.js"></script>
+  <script type="module" src="./Lotto.js"></script>
+
+</body>
+</html>
