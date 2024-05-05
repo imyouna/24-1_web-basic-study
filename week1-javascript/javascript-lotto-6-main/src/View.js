@@ -8,6 +8,7 @@ class View{
     }
     else {
       const num = Number(price) / 1000;
+      document.getElementsByClassName("makeLottos")[0].style.display='block';
       document.getElementById("num").innerHTML = `총 ${num}개를 구매했습니다.`;
       return num;
     }
@@ -18,7 +19,7 @@ class View{
   }
 
   showInputWinNumber(){
-    document.getElementsByClassName("number-form")[0].style.display = 'inline-block';
+    document.getElementsByClassName("number-form")[0].style.display = 'flex';
   }
 
   inputNumber(){
@@ -49,8 +50,9 @@ class View{
   }
 
   printResult(prize){
-    console.log(prize);
-    document.getElementsByClassName("result")[0].style.display = 'inline-block';
+    //console.log(prize);
+    const resultButton=document.getElementById("result-box");
+    resultButton.showModal();
     document.getElementById("5등").innerHTML = `${prize[5]}개`;
     document.getElementById("4등").innerHTML = `${prize[4]}개`;
     document.getElementById("3등").innerHTML = `${prize[3]}개`;
